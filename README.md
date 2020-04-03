@@ -1,10 +1,10 @@
 # compose-cadastro
 
-Para subir a aplicação, va até a pasta onde esta o compose e faça o comando
+Para subir a aplicação, va até a raiz da pasta onde está o docker-compose e faça o seguinte comando
 
 `docker-compose up`
 
 Depois só abrir <a>http://localhost:9000/</a> e pronto! sistema vai estar rodando (:
 
-login: admin
+login: admin <br>
 senha: admin
