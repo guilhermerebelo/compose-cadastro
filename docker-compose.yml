@@ -1,12 +1,5 @@
 version: "3.7"
 services:
-    web:
-        container_name: cadastro_api
-        image: guilhermerebelo/cadastro:latest
-        ports:
-            - 9000:9000
-        depends_on:
-            - db
     db:
         container_name: cadastro_postgres
         image: postgres:latest
@@ -19,6 +12,21 @@ services:
             - PGDATA=/var/lib/postgresql/data/pgdata
         ports:
             - 5432:5432
+    api:
+        container_name: cadastro_api
+        image: guilhermerebelo/cadastro:latest
+        ports:
+            - 8080:8080
+        depends_on:
+            - db
+
+    front:
+        container_name: cadastro_front
+        image: guilhermerebelo/cadastro-front:latest
+        ports:
+            - 9000:80
+        depends_on:
+            - api
 
 volumes:
     db: {}
